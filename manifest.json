@@ -1,0 +1,17 @@
+{
+    "name": "Anagramify",
+    "description": "Turns every word on web page into an anagram of itself.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
