@@ -1,4 +1,5 @@
-window.onload = anagramifyPage;
+anagramifyPage();
+console.log("anagrammed");
 
 function shuffleWord(word){
     shuffledWord = word.split("");
