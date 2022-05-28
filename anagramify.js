@@ -1,7 +1,7 @@
 anagramifyPage();
-console.log("anagrammed");
 
 function shuffleWord(word){
+    // Shuffles the given string by performing the Fisher-Yates algorithm 
     shuffledWord = word.split("");
     n = shuffledWord.length;
     for(var i = n - 1; i > 0; i--) {
@@ -14,8 +14,8 @@ function shuffleWord(word){
 }
 
 function wordReplacer(text,word){
+    // Replaces the word in a string with a shuffled version of the word.
     shuffledWord = shuffleWord(word);
-    console.log(shuffledWord);
     text = text.replace(word, shuffledWord);
     return text;
 }
@@ -26,8 +26,9 @@ function anagramifyNode(text){
     if ( (wordList != null) ){
         for (var i = 0; i < wordList.length; i++) {
             var word = wordList[i];
-            console.log(word);
             anagrammed_text = wordReplacer(anagrammed_text, word);
+        // Inneficient goes through each 'paragraph' multiple times... 
+        // Maybe there's a RegEx solution??
         }
     }
     return anagrammed_text;
